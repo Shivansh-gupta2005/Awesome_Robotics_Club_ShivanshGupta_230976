@@ -72,9 +72,9 @@ for i in range(len(path)):
     (o,p)=path[i]
     u.append((o+1,p+1))
 print(u)
-# for i in range (5):
-#     for j in range (5):
-#          if b[i][j]==1:
-#              print("(",i+1,",",j+1,")")
-#          else:
-#              print("No path found")
+ for i in range (5):
+     for j in range (5):
+         if b[i][j]==1:
+            print("(",i+1,",",j+1,")")
+        else:
+             print("No path found")
