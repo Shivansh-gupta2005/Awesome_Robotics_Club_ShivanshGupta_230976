@@ -78,3 +78,29 @@ print(u)
             print("(",i+1,",",j+1,")")
         else:
              print("No path found")
+grid_size=(5,5)
+image_size = (861,860)  # Example image size
+cell_size = (image_size[0] // grid_size[0], image_size[1] // grid_size[1])
+
+
+
+imagepath=r"C:\\Users\\shiva\\OneDrive\\Pictures\\navigationtask.jpg"
+
+
+image=cv2.imread(imagepath)
+cell_size=(image_size[0] // grid_size[0], image_size[1] // grid_size[1])
+
+
+for x, y in path:
+    
+    top_left = ( y * cell_size[1],x * cell_size[0])
+    bottom_right = ((y + 1) * cell_size[1],(x + 1) * cell_size[0])
+   
+    cv2.putText(image, f'({x+1}, {y+1})', (top_left[0] + 40, top_left[1] + 60), cv2.FONT_HERSHEY_SIMPLEX,1 , (0, 0, 0), 4)
+
+
+cv2.imshow('Shortest Path with Coordinates', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+             
